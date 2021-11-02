@@ -9,9 +9,7 @@ const MU_USERNAME = process.env.MU_USERNAME || ''
 const MU_PASSWORD = process.env.MU_PASSWORD || ''
 
 ;(async () => {
-  const browser = await puppeteer.launch({
-    headless: false,
-  })
+  const browser = await puppeteer.launch()
   const page = await browser.newPage()
   await page.goto('https://academic.ict.mahidol.ac.th/student/e-Payment/Default.aspx')
 
