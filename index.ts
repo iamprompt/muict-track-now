@@ -35,7 +35,8 @@ const LINE_NOTIFY_TOKEN = process.env.LINE_NOTIFY_TOKEN || ''
   oldMajor = oldMajor.split('|')[0]
 
   if (newMajor !== oldMajor) {
-    console.log('new')
+    console.log('There are some changes')
+    console.log(oldMajor, newMajor)
     await axios.post(
       'https://notify-api.line.me/api/notify',
       stringify({
