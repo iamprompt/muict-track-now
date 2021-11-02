@@ -3,8 +3,8 @@ name: Checking Track Announcement
 on:
   push:
     branches: [main]
-  # schedule:
-  #   - cron: '* * * * *'
+  schedule:
+    - cron: '*/5 * * * *'
 
 jobs:
   checking:
@@ -23,6 +23,8 @@ jobs:
         env:
           MU_USERNAME: ${{ secrets.MU_USERNAME }}
           MU_PASSWORD: ${{ secrets.MU_PASSWORD }}
+          LINE_NOTIFY_TOKEN: ${{ secrets.LINE_NOTIFY_TOKEN }}
+          TZ: Asia/Bangkok
         run: yarn start
       - uses: EndBug/add-and-commit@v7
         with:
