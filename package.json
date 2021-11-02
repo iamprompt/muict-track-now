@@ -8,13 +8,11 @@
   "scripts": {
     "start": "ts-node ."
   },
-  "devDependencies": {
+  "dependencies": {
+    "axios": "^0.24.0",
     "dotenv": "^10.0.0",
-    "playwright": "^1.16.3",
+    "puppeteer": "^10.4.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
-  },
-  "dependencies": {
-    "axios": "^0.24.0"
   }
 }

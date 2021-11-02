@@ -17,8 +17,6 @@ jobs:
         with:
           node-version: 16.x
           cache: 'yarn'
-      - name: Install operating system dependencies
-        run: npx playwright install-deps chromium
       - name: Install Dependencies
         run: yarn
       - name: Start Checking
