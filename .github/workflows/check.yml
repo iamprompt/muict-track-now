@@ -1,0 +1,35 @@
+name: Checking Track Announcement
+
+on:
+  push:
+    branches: [main]
+  # schedule:
+  #   - cron: '* * * * *'
+
+jobs:
+  checking:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Nodejs
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: 'yarn'
+      - name: Install operating system dependencies
+        run: npx playwright install-deps chromium
+      - name: Install Dependencies
+        run: yarn
+      - name: Start Checking
+        env:
+          MU_USERNAME: ${{ secrets.MU_USERNAME }}
+          MU_PASSWORD: ${{ secrets.MU_PASSWORD }}
+        run: yarn start
+      - uses: EndBug/add-and-commit@v7
+        with:
+          add: 'README.md'
+          author_name: iamPrompt's Bot
+          author_email: iampromptbot@users.noreply.github.com
+          message: 'Update README.md'
+          push: true
