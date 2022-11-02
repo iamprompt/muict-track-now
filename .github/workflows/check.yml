@@ -28,7 +28,7 @@ jobs:
           MU_PASSWORD: ${{ secrets.MU_PASSWORD }}
           LINE_NOTIFY_TOKEN: ${{ secrets.LINE_NOTIFY_TOKEN }}
           TZ: Asia/Bangkok
-        run: yarn Start
+        run: yarn start
       - uses: EndBug/add-and-commit@v7
         with:
           add: 'README.md'
