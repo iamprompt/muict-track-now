@@ -20,13 +20,15 @@ jobs:
           cache: 'yarn'
       - name: Install Dependencies
         run: yarn
+      - name: Build
+        run: yarn build
       - name: Start Checking
         env:
           MU_USERNAME: ${{ secrets.MU_USERNAME }}
           MU_PASSWORD: ${{ secrets.MU_PASSWORD }}
           LINE_NOTIFY_TOKEN: ${{ secrets.LINE_NOTIFY_TOKEN }}
           TZ: Asia/Bangkok
-        run: yarn start
+        run: yarn Start
       - uses: EndBug/add-and-commit@v7
         with:
           add: 'README.md'

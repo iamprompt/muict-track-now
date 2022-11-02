@@ -1,8 +1,8 @@
 import * as puppeteer from 'puppeteer'
 import { config as dotenv } from 'dotenv'
 import { writeFile, readFile } from 'fs/promises'
-import axios from 'axios'
 import { stringify } from 'query-string'
+import axios from 'axios'
 
 dotenv()
 
